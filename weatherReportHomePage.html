@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Report on your city</title>
+    <title>Weather Report</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        html{
+            background-image: -webkit-linear-gradient(65deg, #1363DF 50%, #DFF6FF 50%);
+        }
+    </style>
 </head>
 <body style="text-align:center;">
-    <h1 style="margin-top:18%;"><em>Weather Report</em></h1>
+    <h1 style="margin-top:11%;"><em>Weather Report</em></h1>
     <form action="/" method="post">
-        <label for="cityName">City name :</label>
-        <input type="text" name="cityName" placeholder="City name" style="margin-right: 1rem;">
+        <div class="row">
 
-        <label for="stateCode">State code :</label>
-        <input type="text" name="stateCode" placeholder="State code eg 27" style="margin-right: 1rem;">
+            <div class="col-lg-4 form-group">
+                <label for="cityName">City name :</label>
+                <input type="text" class="form-control" name="cityName" placeholder="City name" style="margin-right: 1rem;" autocomplete="off">
+            </div>
 
-        <label for="countryCode">Country code :</label>
-        <input type="text" name="countryCode" placeholder="Country code eg +91">
+            <div class="col-lg-4 form-group">
+                <label for="stateCode">State code :</label>
+                <input type="text" class="form-control" name="stateCode" placeholder="State code eg 27" style="margin-right: 1rem;" autocomplete="off">
+            </div>
+
+            <div class="col-lg-4 form-group">
+                <label for="countryCode">Country code :</label>
+                <input type="text" class="form-control" name="countryCode" placeholder="Country code eg +91" autocomplete="off">
+            </div>
+
+        </div>
+
         <br>
-        <button type="submit" style="margin-top:0.6rem">submit</button>
+        <button class="btn btn-lg btn-primary" type="submit" style="margin-top:0.6rem">Submit</button>
     </form>
     <footer style="text-align: center; margin-top:5rem;">
         <p>Vivek Rathod</p>

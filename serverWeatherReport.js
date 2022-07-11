@@ -6,6 +6,8 @@ const https = require("https");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended : true}));
 
+app.set("view engine","ejs");
+
 app.get("/", function (req,res){
     res.sendFile(__dirname + "/weatherReportHomePage.html");
 });
@@ -26,8 +28,7 @@ app.post("/",function(req,res){
             var weatherDescription = parsedJsonData.weather[0].description;
             var iconCode = parsedJsonData.weather[0].icon;
             var iconURL = "http://openweathermap.org/img/wn/"+ iconCode +"@2x.png";
-            res.send("<style>body{background-color:D0C9C0; text-align:center;}</style><h3 style='font-family:arial;'>Todays weather at "+cityName+" is '"+ weatherDescription + "' and <em>" + temp + "</em> degree celsious </h3><img src='"+ iconURL +"' alt='weather-icon'>");
-
+            res.render("report",{cityName:cityName, weatherDescription:weatherDescription, temp:temp, iconURL:iconURL});
         })
     });
 
